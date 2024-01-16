@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --body-bg: #262a2f;
+  --gray: #d1d1d1;
+  --white: #fff;
+  --blue: #494eea;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,66 +15,70 @@
 }
 
 body {
-  background: #262a2f;
+  background: var(--body-bg);
+  padding: 1rem;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .container {
-  width: 400px;
-  padding: 25px 35px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
+  width: 24rem;
+  padding: 1.5rem 2rem;
+  background: var(--white);
   border-radius: 10px;
-}
-
-.container p {
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 8px;
-}
-
-.container input {
-  width: 100%;
-  height: 50px;
-  border: 1px solid #494eea;
-  padding: 10px;
-  margin: 10px 0 20px;
-  border-radius: 5px;
-}
-
-.container button {
-  width: 100%;
-  height: 50px;
-  background: #494eea;
-  color: #fff;
-  border: 0;
-  outline: 0;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  margin: 20px 0;
-  font-weight: 500;
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+  & > p {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: var(--blue);
+  }
+  & > input {
+    width: 100%;
+    height: 3rem;
+    border: 1px solid var(--blue);
+    padding: 1rem;
+    margin: 0.625rem 0 1.25rem;
+    border-radius: 0.25rem;
+  }
+  & > button {
+    width: 100%;
+    height: 3rem;
+    background: var(--blue);
+    color: var(--white);
+    border: 0;
+    outline: 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.625rem 0.625rem rgba(0, 0, 0, 0.1);
+    margin: 1.25rem 0;
+    font-weight: 500;
+    cursor: pointer;
+  }
 }
 
 #imgBox {
-  width: 200px;
-  border-radius: 5px;
+  width: 12.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 0.25rem;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s;
-}
-
-#imgBox img {
-  width: 100%;
-  padding: 10px;
-}
-
-#imgBox.show-img {
-  max-height: 300px;
-  margin: 10px auto;
-  border: 1px solid #d1d1d1;
+  transition: max-height 1s ease-in-out;
+  & > img {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  &.show-img {
+    max-height: 18.75rem;
+    margin: 0.625rem auto;
+    border: 1px solid var(--gray);
+  }
 }
 
 .error {
